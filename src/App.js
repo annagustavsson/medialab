@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom"
+import HomePage from "./pages/HomePage/HomePage"
+import SideBar from "./components/Sidebar/SiderBar"
+import ForumPage from "./pages/ForumPage/ForumPage"
+import TurnHerePage from "./pages/TurnHerePage/TurnHerePage"
+import ResourcesPage from "./pages/ResourcesPage/ResourcesPage"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <div>
+        <SideBar/>
+        <Route path="/" exact render={() => <HomePage/>}/>
+        <Route path="/forum" exact render={() => <ForumPage/>}/>
+        <Route path="/wheretoturn" exact render={() => <TurnHerePage/>}/>
+        <Route path="/resources" exact render={() => <ResourcesPage/>}/>
+        </div>
+      </Switch>
+    </Router>
+    
   );
 }
 
