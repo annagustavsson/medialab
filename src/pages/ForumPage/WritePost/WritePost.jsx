@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import styles from "../forumPage.module.scss"
 import "firebase/firestore"
-import {
-    writePost,
-  } from '../../../firebase/firebase';
+import {useFirebase} from "../../../contexts/FirebaseContext"
+
 
 const WritePost = ({showPopup}) => {
+
+    const {writePost} = useFirebase(); //from context
 
     const [newMessage, setNewMessage] = useState()
 
