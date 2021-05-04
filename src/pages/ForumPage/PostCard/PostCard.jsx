@@ -5,7 +5,7 @@ const PostCard = ({text}) => {
    
     return (
         <div className={styles.card}>
-            This is the message: {text}
+            Post: {text}
         </div>
     )
 }

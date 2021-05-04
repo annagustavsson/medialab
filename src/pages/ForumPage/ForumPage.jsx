@@ -33,7 +33,6 @@ useEffect(() => { // TODO: make general hook or js function in separate file
 
     return (
         <div className={styles.container}>
-            Forumpage
             {messages && messages.map(message => <PostCard key={message.id} text={message.text}/> )}
             <div onClick={changeVisible} className={styles.postButton}>write post...</div>
              {isShown && <WritePost showPopup={setIsShown}/> }
