@@ -19,5 +19,20 @@ code {
 	flex-direction: row-reverse;
 	background-color: $lightGreen;
 	min-height: 100vh;
-	width: 100%;
+	width: 100vw;
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.logoContainer {
+	position: fixed;
+	bottom: 2rem;
+	left: 2rem;
+	height: 6rem;
+
+	img {
+		height: 100%;
+	}
 }
