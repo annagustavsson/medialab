@@ -29,7 +29,6 @@ const FirebaseContextProvider = ({ children }) => {
 
     useEffect(() => { 
         if (db) {
-            console.log("hello")
             const unsubscribe = db
         .collection('messages')
         .orderBy('createdAt').limit(25) //show 25 latest posts
