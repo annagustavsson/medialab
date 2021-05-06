@@ -1,50 +1,39 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-color: #84B082;
+@import '../../assets/styling/Colors';
+@import '../../assets/styling/Fonts';
+
+.pageContainer {
+	display: flex;
+	justify-content: center;
+	height: 100%;
 }
 
-.card {
-    border: 2px solid white;
-    color: white;
-    padding: 10px 10px 10px 10px;
-    margin-bottom: 10px;
-    max-width: 40rem;
+.contentContainer {
+	width: 40vw;
+	min-height: 70vh;
+	margin-top: 6rem;
+}
+
+.pageTitle {
+	@include font($white, 42px, 600);
+}
+
+.pageInfo {
+	@include font($white, 16px, 400);
+}
+
+.postsContainer {
+	display: flex;
+	flex-direction: column;
 }
 
 .postButton {
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.226);
-    max-width: 30rem;
-    padding: 10px 10px 10px 10px;
+	@include font($white, 16px, 400);
+	border: 1px solid $white;
+	border-radius: 0.7rem;
+	cursor: pointer;
+	padding: 0.7rem;
+
+	&:hover {
+		background-color: rgba($white, 0.1);
+	}
 }
-
-
-.writePostContainer {
-    padding: 10px 10px 10px 10px;
-    margin-bottom: 10px;
-    max-width: 40rem;
-    max-height: 30rem;
-    background-color: white;
-    z-index: 1;
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    width: 40%;
-}
-
-// .modal {
-//     position: fixed;
-//     z-index: 1;
-//     width: 100%;
-//     height: 100%;
-//     background-color: rgba(0, 0, 0, 0.25);
-//   }
-
-
-
-
-// .hideWritePost {
-//     display: none;
-// }

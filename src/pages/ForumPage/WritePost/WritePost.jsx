@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import styles from "../forumPage.module.scss"
+import styles from "./WritePost.module.scss"
 import "firebase/firestore"
 import {useFirebase} from "../../../contexts/FirebaseContext"
 
@@ -21,14 +21,19 @@ const WritePost = ({showPopup}) => {
     }
 
     return (
-        <div className={styles.writePostContainer}>
-            Write your post HERE
+        <div className={styles.container}>
+            <div className={styles.content}>
+                <h3 className={styles.title}>Nytt inlägg</h3>
             <form onSubmit={handleOnSubmit}>
                 <label>
-                <input type="text" value={newMessage} onChange={handleOnChange} />
+                <textarea className={styles.textInput} cols="50" rows="15" value={newMessage} onChange={handleOnChange} />
                 </label>
-                <input type="submit" value="Post" />
+                <div className={styles.CTA}>
+                    <p className={styles.disclaimer}>Om läget är akut, ring 112.</p>
+                    <button type="submit" value="Post" className={styles.submitButton}>Dela inlägg</button>
+                </div>
             </form>
+            </div>
         </div>
     )
 }
