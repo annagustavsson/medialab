@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
-import styles from "./sideBar.module.scss"
+import styles from "./sidebar.module.scss"
 import SidebarButton from "../sidearButton/SidebarButton"
 
 const SideBar = () => {
