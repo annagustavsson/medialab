@@ -1,11 +1,12 @@
 @import '../../assets/styling/Colors';
+@import '../../assets/styling/Fonts';
 
 .sidebarContainer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	background-color: $darkGreen;
-	width: 16rem;
+	max-width: 20rem;
 }
 
 .menu {
@@ -18,4 +19,6 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 	list-style-type: none;
+	padding: 0;
+	margin: 2rem;
 }

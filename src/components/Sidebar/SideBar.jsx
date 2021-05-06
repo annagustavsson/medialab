@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
 import styles from "./sidebar.module.scss"
-import SidebarButton from "../sidearButton/SidebarButton"
+import SidebarButton from "../sidebarButton/SidebarButton"
 
 const SideBar = () => {
     let history = useHistory()
@@ -15,6 +15,8 @@ const SideBar = () => {
                         <SidebarButton event={() => history.push("/resources")} text={"Det här erbjuder KTH"} /></li>
                     <li>
                         <SidebarButton event={() => history.push("/wheretoturn")} text={"Vilken hjälp behöver jag?"} /></li>
+                    <li>
+                        <SidebarButton event={() => history.push("/")} text={"Hur söker jag hjälp?"} /></li>
                 </ul>
             </nav>
         </aside>
