@@ -1,0 +1,22 @@
+@import '../../assets/styling/Colors';
+@import '../../assets/styling/Fonts';
+
+.pageContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contentContainer {
+	width: 40vw;
+	margin-top: 6rem;
+}
+
+.pageTitle {
+	@include font($white, 42px, 600);
+}
+
+.description {
+	@include font($white, 16px, 400);
+}

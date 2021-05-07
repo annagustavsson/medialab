@@ -3,9 +3,9 @@ import styles from "./sidebarButton.module.scss"
 
 const SidebarButton = ({text, event}) => {
     return (
-        <div onClick={event} className={styles.button}>
+        <button onClick={event} className={styles.button}>
             {text}
-        </div>
+        </button>
     )
 }
 

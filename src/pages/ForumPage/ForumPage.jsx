@@ -18,10 +18,20 @@ const ForumPage = () => {
     }
 
     return (
-        <div className={styles.container}>
-            {messages && messages.map(message => <PostCard key={message.id} text={message.text}/> )}
-            <div onClick={changeVisible} className={styles.postButton}>write post...</div>
-             {isShown && <WritePost showPopup={setIsShown}/> }
+        <div className={styles.pageContainer}>
+            <div className={styles.contentContainer}>
+                <h1 className={styles.pageTitle}>Tankar från studenter</h1>
+                <p className={styles.pageInfo}>Här kan du och andra studenter dela med dig av 
+                tankar och funderingar om livet på KTH. Du kan 
+                också kommentera på inlägg som andra skrivit. 
+                Alla inlägg och kommentarer granskas innan 
+                publicering.</p>
+                <div className={styles.postsContainer}>
+                    <div onClick={changeVisible} className={styles.postButton}>write post...</div>
+                    {isShown && <WritePost showPopup={setIsShown}/> }
+                    {messages && messages.map(message => <PostCard key={message.id} text={message.text}/> )}
+                </div>
+             </div>
         </div>
     )
 }

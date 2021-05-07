@@ -1,0 +1,10 @@
+@import '../../../assets/styling/Colors';
+@import '../../../assets/styling/Fonts';
+
+.card {
+	@include font($white, 16px, 400);
+	border: 1px solid $white;
+	border-radius: 0.7rem;
+	margin: 0.5rem 0;
+	padding: 0.7rem;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../../ForumPage/forumPage.module.scss"
+import styles from "./PostCard.module.scss"
 
 const PostCard = ({text}) => {
    
