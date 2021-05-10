@@ -20,3 +20,15 @@
 .description {
 	@include font($white, 16px, 400);
 }
+
+.relatableCardsContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.helpLink {
+	@include font($white, 16px, 700);
+	text-decoration: none;
+}

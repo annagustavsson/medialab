@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./WritePost.module.scss"
 import "firebase/firestore"
 import {useFirebase} from "../../../contexts/FirebaseContext"
@@ -9,6 +9,13 @@ const WritePost = ({showPopup}) => {
     const {writePost} = useFirebase(); //from context
 
     const [newMessage, setNewMessage] = useState()
+    const [isDisabled, setIsDisabled] = useState(false)
+
+    useEffect(() => {
+        if (newMessage && newMessage !== '')  {
+            setIsDisabled(false)
+        } else { setIsDisabled(true) } 
+    }, [newMessage])
 
     const handleOnChange = e => {
         setNewMessage(e.target.value)
@@ -16,8 +23,10 @@ const WritePost = ({showPopup}) => {
 
     const handleOnSubmit = e => {
         e.preventDefault();
-        writePost(newMessage)
-        showPopup(false)
+        if (e.target.value && e.target.value !== '')  {
+            writePost(newMessage)
+            showPopup(false)
+        }
     }
 
     return (
@@ -26,11 +35,11 @@ const WritePost = ({showPopup}) => {
                 <h3 className={styles.title}>Nytt inlägg</h3>
             <form onSubmit={handleOnSubmit}>
                 <label>
-                <textarea className={styles.textInput} cols="50" rows="15" value={newMessage} onChange={handleOnChange} />
+                <textarea className={styles.textInput} cols="50" rows="15" value={newMessage} placeholder="Skriv ditt inlägg här..." onChange={handleOnChange} />
                 </label>
                 <div className={styles.CTA}>
                     <p className={styles.disclaimer}>Om läget är akut, ring 112.</p>
-                    <button type="submit" value="Post" className={styles.submitButton}>Dela inlägg</button>
+                    <button disabled={isDisabled} type="submit" value="Post" className={styles.submitButton}>Dela inlägg</button>
                 </div>
             </form>
             </div>
