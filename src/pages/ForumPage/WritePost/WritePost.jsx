@@ -23,9 +23,10 @@ const WritePost = ({showPopup}) => {
         setNewMessage(e.target.value)
     }
 
+    
     const handleOnSubmit = e => {
         e.preventDefault();
-        if (e.target.value && e.target.value !== '')  {
+        if (newMessage != null && newMessage !== '')  {
             writePost(newMessage)
             showPopup(false)
         }
