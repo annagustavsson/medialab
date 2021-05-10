@@ -28,6 +28,7 @@
 
 .postButton {
 	@include font($white, 16px, 400);
+	font-style: italic;
 	border: 1px solid $white;
 	border-radius: 0.7rem;
 	cursor: pointer;

@@ -35,7 +35,7 @@ const WritePost = ({showPopup}) => {
                 <h3 className={styles.title}>Nytt inlägg</h3>
             <form onSubmit={handleOnSubmit}>
                 <label>
-                <textarea className={styles.textInput} cols="50" rows="15" value={newMessage} onChange={handleOnChange} />
+                <textarea className={styles.textInput} cols="50" rows="15" value={newMessage} placeholder="Skriv ditt inlägg här..." onChange={handleOnChange} />
                 </label>
                 <div className={styles.CTA}>
                     <p className={styles.disclaimer}>Om läget är akut, ring 112.</p>

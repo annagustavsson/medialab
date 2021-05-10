@@ -27,7 +27,7 @@ const ForumPage = () => {
                 Alla inlägg och kommentarer granskas innan 
                 publicering.</p>
                 <div className={styles.postsContainer}>
-                    <div onClick={changeVisible} className={styles.postButton}>write post...</div>
+                    <div onClick={changeVisible} className={styles.postButton}>Skriv ett inlägg...</div>
                     {isShown && <WritePost showPopup={setIsShown}/> }
                     {messages && messages.map(message => <PostCard key={message.id} text={message.text}/> )}
                 </div>
