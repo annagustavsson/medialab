@@ -29,6 +29,10 @@ const WritePost = ({showPopup}) => {
             writePost(newMessage)
             showPopup(false)
         }
+        else {
+            showPopup(false) // gör showPopup(false) i annan func. som hanterar om man trycker på ESC/"X"
+            //disable post button
+        }
     }
 
     return (
