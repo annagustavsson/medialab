@@ -4,6 +4,8 @@ import "firebase/firestore"
 import {useFirebase} from "../../../contexts/FirebaseContext"
 
 
+//TODO: ESC button for closing write-post-window without writing something.
+
 const WritePost = ({showPopup}) => {
 
     const {writePost} = useFirebase(); //from context
@@ -26,6 +28,10 @@ const WritePost = ({showPopup}) => {
         if (e.target.value && e.target.value !== '')  {
             writePost(newMessage)
             showPopup(false)
+        }
+        else {
+            showPopup(false) // gör showPopup(false) i annan func. som hanterar om man trycker på ESC/"X"
+            //disable post button
         }
     }
 
