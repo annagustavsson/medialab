@@ -1,11 +1,12 @@
 import React from 'react'
 import {useHistory} from "react-router-dom"
-import {useFirebase} from "../../../contexts/FirebaseContext"
+import {useCurrentPost} from "../../../contexts/CurrentPostContext"
 import styles from "./PostCard.module.scss"
 
 const PostCard = ({text, id, message}) => {
-   
-    const {setCurrentPost} = useFirebase(); //from context
+
+    const {setCurrentPost} = useCurrentPost();
+
     let history = useHistory()
 
 

@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import {useFirebase} from "../../../contexts/FirebaseContext"
+import {useCurrentPost} from "../../../contexts/CurrentPostContext"
 
-// visa answers från context (de är alltid från currentpost)
-// props {post, answers}
 
 const AnswerThread = () => {
-    const {currentPost, answers, writeAnswer} = useFirebase(); //from context} = useFirebase(); //from context
+    const {answers, writeAnswer} = useFirebase();
+    const {currentPost} = useCurrentPost();
+
 
     const [newAnswer, setNewAnswer] = useState()
 
@@ -24,7 +25,7 @@ const AnswerThread = () => {
         <div>
             <div>
                 <div>{currentPost && currentPost.text}</div> 
-                {answers.length > 0 ? answers.map(answer => <div>{answer.answer}</div>): <div> No answers yet...</div>}
+                {answers.length > 0 ? answers.map(answer => <div key={answer.answer}>{answer.answer}</div>): <div> No answers yet...</div>}
             </div>
             <form onSubmit={handleOnSubmit}>
                 <label>

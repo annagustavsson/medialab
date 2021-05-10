@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import firebase from "firebase/app"
 import "firebase/firestore"
+import {useCurrentPost} from "./CurrentPostContext"
 
 const FirebaseContext = React.createContext();
 
@@ -23,12 +24,11 @@ if (!firebase.apps.length) {
 
 const FirebaseContextProvider = ({ children }) => {
     const db = firebase.firestore();
+    const {currentPost} = useCurrentPost()
 
 
-    const [messages, setMessages] = useState([]) // i anant context?
-    const [currentPost, setCurrentPost] = useState(null) // i annat context ?
-    //const [currentPost, setCurrentPost] = useState('43RnytJ5cb3jfAs4dKTQ') // i annat context ?
-    const [answers, setAnswers] = useState([]) // i annat context ?
+    const [messages, setMessages] = useState([]) 
+    const [answers, setAnswers] = useState([])
     
 
     useEffect(() => { 
@@ -38,7 +38,7 @@ const FirebaseContextProvider = ({ children }) => {
         .orderBy('createdAt').limit(25) //show 25 latest posts
         .onSnapshot(querySnapshot => {
             const data = querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id}));
-            setMessages(data)  // sätt context från ett annat context         
+            setMessages(data)      
         });
         return unsubscribe
         }
@@ -50,7 +50,7 @@ const FirebaseContextProvider = ({ children }) => {
       .collection('messages')
       .doc(currentPost.id)
       .collection('answers')
-      .orderBy('createdAt') //show 25 latest posts
+      .orderBy('createdAt') 
       .onSnapshot(querySnapshot => {
           const postAnswers = querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id, parentid: currentPost.id}));
           setAnswers(postAnswers)
@@ -85,11 +85,9 @@ const FirebaseContextProvider = ({ children }) => {
       value={{
         db: db,
         messages: messages,
-        currentPost: currentPost,
         answers: answers,
         writePost: writePost,
         writeAnswer: writeAnswer,
-        setCurrentPost: setCurrentPost,
       }}
     >
       {children}
