@@ -48,7 +48,6 @@ const FirebaseContextProvider = ({ children }) => {
       if (db && currentPost) {
           const unsubscribe = db
       .collection('messages')
-      //.doc(currentPost)
       .doc(currentPost.id)
       .collection('answers')
       .orderBy('createdAt') //show 25 latest posts
@@ -70,6 +69,15 @@ const FirebaseContextProvider = ({ children }) => {
         }
     }
 
+    const writeAnswer = (answerText) => {
+      if (db) {
+        db.collection('messages').doc(currentPost.id).collection('answers').add({
+              answer: answerText,
+              createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        })
+      }
+    }
+
 
   
   return (
@@ -80,6 +88,7 @@ const FirebaseContextProvider = ({ children }) => {
         currentPost: currentPost,
         answers: answers,
         writePost: writePost,
+        writeAnswer: writeAnswer,
         setCurrentPost: setCurrentPost,
       }}
     >

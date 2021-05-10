@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import ForumPage from './pages/ForumPage/ForumPage';
 import TurnHerePage from './pages/TurnHerePage/TurnHerePage';
 import ResourcesPage from './pages/ResourcesPage/ResourcesPage';
+import AnswerThread from "./pages/ForumPage/AnswerThread/AnswerThread"
 
 import logo from './assets/images/KTH.png';
 
@@ -29,6 +30,7 @@ function App() {
 									exact
 									render={() => <ResourcesPage />}
 								/>
+								<Route path="/forum/:id" exact render ={() => <AnswerThread/>}/> 
 							</main>
 						</div>
 						<div className='logoContainer'>
