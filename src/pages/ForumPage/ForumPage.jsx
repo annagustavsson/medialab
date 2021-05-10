@@ -29,7 +29,7 @@ const ForumPage = () => {
                 <div className={styles.postsContainer}>
                     <div onClick={changeVisible} className={styles.postButton}>Skriv ett inlägg...</div>
                     {isShown && <WritePost showPopup={setIsShown}/> }
-                    {messages && messages.map(message => <PostCard key={message.id} text={message.text}/> )}
+                    {messages && messages.map(message => <PostCard key={message.id} text={message.text} id={message.id} message={message}/> )}
                 </div>
              </div>
         </div>

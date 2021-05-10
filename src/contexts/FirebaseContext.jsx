@@ -25,7 +25,11 @@ const FirebaseContextProvider = ({ children }) => {
     const db = firebase.firestore();
 
 
-    const [messages, setMessages] = useState([])
+    const [messages, setMessages] = useState([]) // i anant context?
+    const [currentPost, setCurrentPost] = useState(null) // i annat context ?
+    //const [currentPost, setCurrentPost] = useState('43RnytJ5cb3jfAs4dKTQ') // i annat context ?
+    const [answers, setAnswers] = useState([]) // i annat context ?
+    
 
     useEffect(() => { 
         if (db) {
@@ -34,12 +38,27 @@ const FirebaseContextProvider = ({ children }) => {
         .orderBy('createdAt').limit(25) //show 25 latest posts
         .onSnapshot(querySnapshot => {
             const data = querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id}));
-            setMessages(data)
-            
+            setMessages(data)  // sätt context från ett annat context         
         });
         return unsubscribe
         }
     }, [db]);
+
+    useEffect(() => { 
+      if (db && currentPost) {
+          const unsubscribe = db
+      .collection('messages')
+      //.doc(currentPost)
+      .doc(currentPost.id)
+      .collection('answers')
+      .orderBy('createdAt') //show 25 latest posts
+      .onSnapshot(querySnapshot => {
+          const postAnswers = querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id, parentid: currentPost.id}));
+          setAnswers(postAnswers)
+      });
+      return unsubscribe
+      }
+  }, [db, currentPost]);
 
     const writePost = (newMessage) => {
         if (db) {
@@ -52,12 +71,16 @@ const FirebaseContextProvider = ({ children }) => {
     }
 
 
+  
   return (
     <FirebaseContext.Provider
       value={{
         db: db,
-        writePost: writePost,
         messages: messages,
+        currentPost: currentPost,
+        answers: answers,
+        writePost: writePost,
+        setCurrentPost: setCurrentPost,
       }}
     >
       {children}

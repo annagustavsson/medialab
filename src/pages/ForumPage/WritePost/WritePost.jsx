@@ -4,6 +4,8 @@ import "firebase/firestore"
 import {useFirebase} from "../../../contexts/FirebaseContext"
 
 
+//TODO: ESC button for closing write-post-window without writing something.
+
 const WritePost = ({showPopup}) => {
 
     const {writePost} = useFirebase(); //from context
