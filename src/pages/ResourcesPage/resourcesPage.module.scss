@@ -16,3 +16,55 @@
 .pageTitle {
 	@include font($white, 42px, 600);
 }
+
+.heading {
+	@include font($white, 32px, 600);
+}
+
+p {
+	@include font($white, 16px, 400);
+}
+
+.studentHalsanButtonsGrid {
+	display: flex;
+	justify-content: space-between;
+}
+
+.studentHalsanButtonContainer {
+	display: flex;
+	flex-direction: column;
+	width: 48%;
+}
+
+.studentHalsanButton {
+	border: none;
+	background: none;
+	background-color: rgba($middleGreenHover, 1);
+	border-radius: 0.7rem;
+	@include font($white, 14px, 400);
+	padding: 1rem;
+
+	&:hover {
+		background-color: rgba($darkGreen, 0.8);
+	}
+}
+
+.studieVagledningButtonContainer {
+	display: flex;
+	justify-content: flex-start;
+	width: 50%;
+	margin-bottom: 10rem;
+}
+
+.studieVagledningButton {
+	border: none;
+	background: none;
+	background-color: rgba($middleGreenHover, 1);
+	border-radius: 0.7rem;
+	@include font($white, 14px, 400);
+	padding: 1rem;
+
+	&:hover {
+		background-color: rgba($darkGreen, 0.8);
+	}
+}

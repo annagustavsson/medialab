@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import FirebaseContextProvider from './contexts/FirebaseContext';
 import CurrentPostContextProvider from "./contexts/CurrentPostContext";
 import HomePage from './pages/HomePage/HomePage';
-import Sidebar from './components/Sidebar/Sidebar';
+import Sidebar from './components/Sidebar/SideBar';
 import ForumPage from './pages/ForumPage/ForumPage';
 import TurnHerePage from './pages/TurnHerePage/TurnHerePage';
 import ResourcesPage from './pages/ResourcesPage/ResourcesPage';
@@ -18,7 +18,6 @@ function App() {
 					<Switch>
 						<div className='app-container'>
 							<div className='content'>
-								<Sidebar />
 								<main className='main'>
 									<Route path='/' exact render={() => <HomePage />} />
 									<Route path='/forum' exact render={() => <ForumPage />} />
@@ -32,8 +31,9 @@ function App() {
 										exact
 										render={() => <ResourcesPage />}
 									/>
-									<Route path="/forum/:id" exact render ={() => <AnswerThread/>}/> 
+									<Route path="/forum/:id" exact render={() => <AnswerThread />} />
 								</main>
+								<Sidebar />
 							</div>
 							<div className='logoContainer'>
 								<img src={logo} alt='logo' />

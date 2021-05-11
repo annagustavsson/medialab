@@ -2,20 +2,21 @@
 @import '../../assets/styling/Fonts';
 
 .button {
-	background: none;
+	@include font(black, 16px, 400);
 	border: none;
-	border: 1px solid $white;
+	background-color: rgba($middleGreenHover, 1);
 	border-radius: 0.7rem;
+	padding: 1rem;
 	cursor: pointer;
 	height: 8rem;
 	width: 16.5rem;
 	margin: 1rem 0;
 
 	&:hover {
-		background-color: rgba($white, 0.1);
+		background-color: rgba($darkGreen, 0.8);
 	}
 }
 
 .text {
-	@include font($white, 16px, 400);
+	@include font($white, 16px, 500);
 }
