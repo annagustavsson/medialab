@@ -10,6 +10,9 @@ const SideBar = () => {
 			<nav className={styles.menu}>
 				<ul className={styles.list}>
 					<li>
+						<SidebarButton event={() => history.push('/')} text={'Start'} />
+					</li>
+					<li>
 						<SidebarButton
 							event={() => history.push('/forum')}
 							text={'Tankar från studenter'}
