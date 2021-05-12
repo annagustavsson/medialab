@@ -32,7 +32,7 @@ const SideBar = () => {
 					</li>
 					<li>
 						<SidebarButton
-							event={() => history.push('/')}
+							event={() => history.push('/how-to')}
 							text={'Hur söker jag hjälp?'}
 						/>
 					</li>
