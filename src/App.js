@@ -4,6 +4,7 @@ import CurrentPostContextProvider from "./contexts/CurrentPostContext";
 import HomePage from './pages/HomePage/HomePage';
 import Sidebar from './components/Sidebar/SideBar';
 import ForumPage from './pages/ForumPage/ForumPage';
+import HowToPage from './pages/HowToPage/HowToPage';
 import TurnHerePage from './pages/TurnHerePage/TurnHerePage';
 import ResourcesPage from './pages/ResourcesPage/ResourcesPage';
 import AnswerThread from "./pages/ForumPage/AnswerThread/AnswerThread";
@@ -31,7 +32,13 @@ function App() {
 										exact
 										render={() => <ResourcesPage />}
 									/>
+									<Route
+										path='/how-to'
+										exact
+										render={() => <HowToPage />}
+									/>
 									<Route path="/forum/:id" exact render={() => <AnswerThread />} />
+
 								</main>
 								<Sidebar />
 							</div>
