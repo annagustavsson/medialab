@@ -1,0 +1,65 @@
+@import '../../../assets/styling/Colors';
+@import '../../../assets/styling/Fonts';
+
+.pageContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contentContainer {
+	width: 40vw;
+	margin-top: 6rem;
+	border-radius: 0.7rem;
+}
+
+.postText {
+	background-color: rgba($white, 0.7);
+	border-top-left-radius: 0.7rem;
+	border-top-right-radius: 0.7rem;
+	padding: 2rem;
+}
+
+.newReply {
+	display: flex;
+	justify-content: flex-start;
+
+	label {
+		flex-grow: 1;
+	}
+}
+
+.textInput {
+	width: 97%;
+	background-color: rgba($middleGreen, 1);
+	border: none;
+	border-radius: 1.5rem;
+	resize: none;
+}
+
+.shareButton {
+	background: $darkGreen;
+	border: none;
+	border: 1px solid $darkGreen;
+	border-radius: 0.7rem;
+	cursor: pointer;
+	@include font($white, 16px, 600);
+}
+
+.answersContainer {
+	border-top: 1px solid $lightGreen;
+	border-bottom-left-radius: 0.7rem;
+	border-bottom-right-radius: 0.7rem;
+	background-color: rgba($white, 0.2);
+	padding: 1rem;
+}
+
+.answer {
+	// background-color: rgba($white, 0.7);
+	@include font($white, 16px, 400);
+	background-color: rgba($middleGreen, 1);
+	border-radius: 0.7rem;
+	padding: 1rem;
+	margin: 1rem 0;
+}

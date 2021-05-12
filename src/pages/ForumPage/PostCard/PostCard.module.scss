@@ -2,9 +2,30 @@
 @import '../../../assets/styling/Fonts';
 
 .card {
-	@include font($white, 16px, 400);
-	border: 1px solid $white;
-	border-radius: 0.7rem;
-	margin: 0.5rem 0;
-	padding: 0.7rem;
+	margin: 1rem 0;
+}
+
+.text {
+	@include font(black, 16px, 400);
+	background-color: rgba($white, 0.7);
+	border-top-left-radius: 0.7rem;
+	border-top-right-radius: 0.7rem;
+	padding: 1rem;
+}
+
+.goToThread {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	@include font($white, 14px, 600);
+	border-top: 1px solid $lightGreen;
+	background-color: $middleGreen;
+	border-bottom-left-radius: 0.7rem;
+	border-bottom-right-radius: 0.7rem;
+	cursor: pointer;
+	padding: 0.4rem 1rem;
+
+	&:hover {
+		background-color: $middleGreenHover;
+	}
 }

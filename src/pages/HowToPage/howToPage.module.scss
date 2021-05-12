@@ -1,0 +1,60 @@
+@import '../../assets/styling/Colors';
+@import '../../assets/styling/Fonts';
+
+.container {
+	display: flex;
+	justify-content: center;
+	height: 100%;
+}
+
+.content {
+	width: 40vw;
+	height: 70%;
+	margin-top: 6rem;
+}
+
+.pageTitle {
+	@include font($white, 42px, 600);
+}
+
+.description {
+	@include font($white, 16px, 400);
+}
+
+.resource {
+	margin-bottom: 4rem;
+}
+
+.heading {
+	@include font($white, 32px, 600);
+}
+
+.otherHeading {
+	@include font($white, 18px, 600);
+}
+
+p {
+	@include font($white, 16px, 400);
+}
+
+.buttonContainer {
+	display: flex;
+	justify-content: center;
+	margin: 2rem 0;
+	width: 100%;
+}
+
+.button {
+	border: none;
+	background: none;
+	background-color: rgba($middleGreenHover, 1);
+	border-radius: 0.7rem;
+	cursor: pointer;
+	@include font($white, 14px, 600);
+	padding: 1rem;
+	width: 60%;
+
+	&:hover {
+		background-color: rgba($darkGreen, 0.8);
+	}
+}

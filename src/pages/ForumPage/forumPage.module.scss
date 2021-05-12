@@ -26,15 +26,20 @@
 	flex-direction: column;
 }
 
-.postButton {
+.posts {
+	border: 1px solid $lightGreen;
+	border-radius: 0.7rem;
+	margin: 1rem 0;
+}
+
+.newPost {
 	@include font($white, 16px, 400);
-	font-style: italic;
-	border: 1px solid $white;
+	background-color: $middleGreen;
 	border-radius: 0.7rem;
 	cursor: pointer;
-	padding: 0.7rem;
+	padding: 1rem;
 
 	&:hover {
-		background-color: rgba($white, 0.1);
+		background-color: $middleGreenHover;
 	}
 }

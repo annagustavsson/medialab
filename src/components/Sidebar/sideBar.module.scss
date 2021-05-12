@@ -2,11 +2,14 @@
 @import '../../assets/styling/Fonts';
 
 .sidebarContainer {
+	position: fixed;
+	right: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	background-color: $darkGreen;
-	max-width: 18rem;
+	max-width: 20%;
+	height: 100vh;
 }
 
 .menu {
@@ -20,5 +23,5 @@
 	justify-content: space-evenly;
 	list-style-type: none;
 	padding: 0;
-	margin: 3rem;
+	margin: 1rem 2.5rem;
 }
