@@ -29,7 +29,7 @@ const TurnHerePage = () => {
         <div className={Styles.pageContainer}>
             <div className={Styles.contentContainer}>
                 <h2 className={Styles.pageTitle}>Vilken hjälp behöver jag?</h2>
-                <p className={Styles.description}>{description.split("\n").map(str => <p>{str}</p>)}</p>
+                <div className={Styles.description}>{description.split("\n").map(str => <div key={str}><p>{str}</p></div>)}</div>
                 <div className={Styles.relatableCardsContainer}>
                     {relatableCards.map( (card, idx) => <RelatableCard key={idx} text={card.text} link={card.link} />)}
                 </div>

@@ -60,7 +60,11 @@ const ResourcesPage = () => {
 				<h2 className={Styles.heading}>{studieVagledning.title}</h2>
 				<p>
 					{studieVagledning.information.split('\n').map((str) => (
-						<p>{str}</p>
+						// <div key={str}>
+						// 	{str}
+							 <p>{str}</p>
+						// </div>
+						
 					))}
 				</p>
 			</div>
