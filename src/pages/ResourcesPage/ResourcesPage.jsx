@@ -39,7 +39,7 @@ const ResourcesPage = () => {
 				</p>
 				<div className={Styles.studentHalsanButtonsGrid}>
 					<div className={Styles.studentHalsanButtonContainer}>
-						<button className={Styles.studentHalsanButton}>
+						<button onClick={()=> window.location.href = 'https://www.su.se/utbildning/din-h%C3%A4lsa/studenth%C3%A4lsan/individuella-samtal-och-telefonr%C3%A5dgivning-p%C3%A5-studenth%C3%A4lsan-i-stockholm-1.466353'} className={Styles.studentHalsanButton}>
 							Tidsbokning av samtal och rådgivning
 						</button>
 						{/* <p>
@@ -48,8 +48,8 @@ const ResourcesPage = () => {
 						</p> */}
 					</div>
 					<div className={Styles.studentHalsanButtonContainer}>
-						<button className={Styles.studentHalsanButton}>
-							Gruppaktiviteter
+						<button onClick={()=> window.location.href = "https://www.su.se/utbildning/din-h%C3%A4lsa/studenth%C3%A4lsan/workshoppar-grupper-och-andra-aktiviteter-1.466402"} className={Styles.studentHalsanButton}>
+							Workshoppar, grupper och andra aktiviteter
 						</button>
 						{/* <p>
 							Klicka här för att läsa mer om workshoppar, grupper och andra
@@ -65,8 +65,8 @@ const ResourcesPage = () => {
 				</p>
 			</div>
 			<div className={Styles.studieVagledningButtonContainer}>
-				<button className={Styles.studieVagledningButton}>
-					Tidsbokning av samtal och rådgivning
+				<button onClick={()=> window.location.href = "https://www.kth.se/student/studievagledning-kontakt"} className={Styles.studieVagledningButton}>
+					Samtal och rådgivning med studievägledare på KTH
 				</button>
 			</div>
 		</div>

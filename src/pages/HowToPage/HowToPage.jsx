@@ -16,6 +16,7 @@ const kthResources = [
     Vi har tystnadsplikt och besök hos oss är gratis. Studenthälsan kan även hjälpa dig med kontakter till instanser i samhället i övrigt.`,
 		buttonLabel:
 			'Klicka här för att komma till tidsbokningen för individuella samtal och telefonrådgivning hos Studenthälsan i Stockholm',
+		urlLink: "https://www.su.se/utbildning/din-h%C3%A4lsa/studenth%C3%A4lsan/individuella-samtal-och-telefonr%C3%A5dgivning-p%C3%A5-studenth%C3%A4lsan-i-stockholm-1.466353"
 	},
 	{
 		title: 'Vårdguiden',
@@ -24,6 +25,7 @@ const kthResources = [
     1177 är ett nationellt telefonnummer för sjukvårdsrådgivning. Du kan ringa dygnet runt. Sjuksköterskorna som svarar bedömer ditt behov av vård, ger dig råd och vägleder till lämplig vårdmottagning när så behövs.`,
 		buttonLabel:
 			'Klicka här för att läsa mer om 1177 och vården i Stockholms län',
+		urlLink : "https://www.1177.se/stockholm/sa-fungerar-varden/varden-i-stockholms-lan/"
 	},
 ];
 
@@ -74,7 +76,7 @@ const HowToPage = () => {
 							))}
 						</p>
 						<div className={Styles.buttonContainer}>
-							<button className={Styles.button}>{resource.buttonLabel}</button>
+							<button onClick= {()=> window.location.href = resource.urlLink} className={Styles.button}>{resource.buttonLabel}</button>
 						</div>
 					</div>
 				))}
