@@ -38,7 +38,7 @@ const FirebaseContextProvider = ({ children }) => {
         .orderBy('createdAt').limit(25) //show 25 latest posts
         .onSnapshot(querySnapshot => {
             const data = querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id}));
-            setMessages(data)      
+            setMessages(data.reverse())
         });
         return unsubscribe
         }
@@ -77,7 +77,6 @@ const FirebaseContextProvider = ({ children }) => {
         })
       }
     }
-
 
   
   return (

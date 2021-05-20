@@ -43,6 +43,7 @@ p {
 	border-radius: 0.7rem;
 	@include font($white, 14px, 400);
 	padding: 1rem;
+	cursor: pointer;
 
 	&:hover {
 		background-color: rgba($darkGreen, 0.8);
@@ -63,6 +64,7 @@ p {
 	border-radius: 0.7rem;
 	@include font($white, 14px, 400);
 	padding: 1rem;
+	cursor: pointer;
 
 	&:hover {
 		background-color: rgba($darkGreen, 0.8);

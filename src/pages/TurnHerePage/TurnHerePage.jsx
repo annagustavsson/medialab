@@ -36,7 +36,7 @@ const TurnHerePage = () => {
                 <p className={Styles.description}>
                     Känner du inte igen dig i någon av beskrivningarna kan du 
                     hitta mer information om hur du söker hjälp
-                    <Link to="/" className={Styles.helpLink}>{` här.`}</Link>
+                    <Link to="/how-to" className={Styles.helpLink}>{` här.`}</Link>
                 </p>
             </div>
         </div>

@@ -76,7 +76,8 @@ const HowToPage = () => {
 							))}
 						</p>
 						<div className={Styles.buttonContainer}>
-							<button onClick= {()=> window.location.href = resource.urlLink} className={Styles.button}>{resource.buttonLabel}</button>
+							<button onClick= {()=> window.open(resource.urlLink, '_blank')} className={Styles.button}>{resource.buttonLabel}</button>
+
 						</div>
 					</div>
 				))}
